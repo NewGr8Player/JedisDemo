@@ -44,6 +44,12 @@ public class TestOrgin {
 		System.out.println(jedis.mget("name1", "name2", "name3"));
 	}
 
+	@Test
+	public void chineseTest(){
+		jedis.set("中文Key","中文Value");
+		System.out.println(jedis.get("中文Key"));
+	}
+
 	@After
 	public void flushDB(){
 		jedis.flushDB();
