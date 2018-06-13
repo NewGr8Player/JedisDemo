@@ -40,6 +40,7 @@ public class TestSerializableObject {
 	@After
 	public void flushDB() {
 		jedis.flushDB();
+		jedis.quit();
 	}
 
 }
