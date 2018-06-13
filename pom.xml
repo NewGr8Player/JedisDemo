@@ -5,6 +5,7 @@
 
     <groupId>com.xavier</groupId>
     <artifactId>demo</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
     <name>JedisDemo</name>
@@ -20,6 +21,7 @@
     <modules>
         <module>base</module>
         <module>string</module>
+        <module>pool</module>
     </modules>
 
     <dependencies>
