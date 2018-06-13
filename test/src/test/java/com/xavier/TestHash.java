@@ -1,5 +1,6 @@
 package com.xavier;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TestHash {
+
 	private Jedis jedis;
 
 
@@ -49,5 +51,10 @@ public class TestHash {
 
 		System.out.println("删除后map的key" + jedis.hkeys("user"));
 
+	}
+
+	@After
+	public void flushDB(){
+		jedis.flushDB();
 	}
 }

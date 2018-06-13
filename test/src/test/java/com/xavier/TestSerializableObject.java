@@ -1,12 +1,9 @@
 package com.xavier;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class TestSerializableObject {
 
@@ -19,8 +16,7 @@ public class TestSerializableObject {
 	}
 
 	/**
-	 * <p>自定义对象 User为例 id name</p>
-	 *
+	 * 自定义对象 User为例 id name
 	 * RedisTemplate 中有 序列化和反序列化
 	 * 如：template.getStringSerializer().serialize("name")
 	 */
@@ -41,5 +37,9 @@ public class TestSerializableObject {
 
 	}
 
+	@After
+	public void flushDB() {
+		jedis.flushDB();
+	}
 
 }

@@ -1,10 +1,12 @@
 package com.xavier;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
 public class TestList {
+
 	private Jedis jedis;
 
 
@@ -12,7 +14,6 @@ public class TestList {
 	public void before() {
 		jedis = new Jedis("127.0.0.1");
 	}
-
 
 	/**
 	 * list
@@ -26,5 +27,10 @@ public class TestList {
 		System.out.println(jedis.lrange("list", 0, 1));
 		System.out.println(jedis.lpop("list")); // 栈顶
 		jedis.del("list");
+	}
+
+	@After
+	public void flushDB(){
+		jedis.flushDB();
 	}
 }

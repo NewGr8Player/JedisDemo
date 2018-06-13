@@ -1,12 +1,13 @@
 package com.xavier;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
 public class TestOrgin {
-	private Jedis jedis;
 
+	private Jedis jedis;
 
 	@Before
 	public void before() {
@@ -41,5 +42,10 @@ public class TestOrgin {
 	public void muliTest() {
 		jedis.mset("name1", "aa", "name2", "bb", "name3", "cc");
 		System.out.println(jedis.mget("name1", "name2", "name3"));
+	}
+
+	@After
+	public void flushDB(){
+		jedis.flushDB();
 	}
 }
