@@ -22,6 +22,7 @@
         <module>base</module>
         <module>string</module>
         <module>pool</module>
+        <module>test</module>
     </modules>
 
     <dependencies>
@@ -29,6 +30,12 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>2.1.0</version>
+        </dependency>
+        <!-- Utils -->
+        <dependency>
+            <groupId>com.xavier</groupId>
+            <artifactId>base</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
